@@ -1,0 +1,21 @@
+{
+  "name": "transcript3-model",
+  "version": "1.0.0",
+  "description": "Model for transcript generator service",
+  "main": "lib/index.js",
+  "types": "lib/index.d.ts",
+  "scripts": {
+    "build": "tsc",
+    "commit": "npm run build && git add . && git commit -m `Build`"
+  },
+  "keywords": [],
+  "author": "Malcolm Alvarez",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/node": "^18.15.11",
+    "typescript": "^5.0.4"
+  },
+  "dependencies": {
+    "zod": "^3.21.4"
+  }
+}

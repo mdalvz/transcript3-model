@@ -1,5 +1,4 @@
 import { z } from 'zod';
-import { OperationErrorType, OperationErrorTypeSchema } from '../model/OperationError';
 
 export class Operation<TRequest, TResponse> {
 
@@ -23,35 +22,26 @@ export class Operation<TRequest, TResponse> {
     this.responseSchema = responseSchema;
   }
 
-  public async invoke(requestBody: TRequest): Promise<[TResponse?, OperationErrorType?]> {
+  public async invoke(requestBody: TRequest): Promise<TResponse> {
     if (!this.requestSchema.safeParse(requestBody).success) {
-      return [undefined, OperationErrorType.VALIDATION_FAILED];
+      throw new Error('Invalid request body');
     }
-    try {
-      let response = await fetch(this.endpoint + this.resource, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-        },
-        body: JSON.stringify(requestBody),
-      });
-      if (response.ok) {
-        try {
-          let responseBody = this.responseSchema.parse(await response.json());
-          return [responseBody, undefined];
-        } catch (_) {
-          return [undefined, OperationErrorType.VALIDATION_FAILED];
-        }
-      } else {
-        try {
-          let errorType = OperationErrorTypeSchema.parse(await response.json());
-          return [undefined, errorType];
-        } catch (_) {
-          return [undefined, OperationErrorType.VALIDATION_FAILED];
-        }
+    let response = await fetch(this.endpoint + this.resource, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(requestBody),
+    });
+    if (response.ok) {
+      try {
+        let responseBody = this.responseSchema.parse(await response.json());
+        return responseBody;
+      } catch (_) {
+        throw new Error('Invalid response body');
       }
-    } catch (_) {
-      return [undefined, OperationErrorType.REQUEST_FAILED];
+    } else {
+      throw new Error(await response.text());
     }
   }
 

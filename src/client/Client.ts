@@ -5,7 +5,13 @@ import {
   CreateAccountResponse, 
   CreateAccountResponseSchema 
 } from '../model/CreateAccount';
-import { CreateSessionRequest, CreateSessionRequestSchema, CreateSessionResource, CreateSessionResponse, CreateSessionResponseSchema } from '../model/CreateSession';
+import { 
+  CreateSessionRequest, 
+  CreateSessionRequestSchema, 
+  CreateSessionResource, 
+  CreateSessionResponse, 
+  CreateSessionResponseSchema 
+} from '../model/CreateSession';
 import { Operation } from './Operation';
 
 export class Client {

@@ -12,6 +12,34 @@ import {
   CreateSessionResponse, 
   CreateSessionResponseSchema 
 } from '../model/CreateSession';
+import { 
+  CreateTranscriptRequest, 
+  CreateTranscriptRequestSchema, 
+  CreateTranscriptResource, 
+  CreateTranscriptResponse, 
+  CreateTranscriptResponseSchema 
+} from '../model/CreateTranscript';
+import { 
+  DeleteTranscriptRequest, 
+  DeleteTranscriptRequestSchema, 
+  DeleteTranscriptResource, 
+  DeleteTranscriptResponse, 
+  DeleteTranscriptResponseSchema 
+} from '../model/DeleteTranscript';
+import { 
+  ListTranscriptsRequest, 
+  ListTranscriptsRequestSchema, 
+  ListTranscriptsResource, 
+  ListTranscriptsResponse, 
+  ListTranscriptsResponseSchema 
+} from '../model/ListTranscripts';
+import { 
+  UpdateTranscriptRequest, 
+  UpdateTranscriptRequestSchema, 
+  UpdateTranscriptResource, 
+  UpdateTranscriptResponse, 
+  UpdateTranscriptResponseSchema 
+} from '../model/UpdateTranscript';
 import { Operation } from './Operation';
 
 export class Client {
@@ -19,6 +47,14 @@ export class Client {
   public readonly createAccount: Operation<CreateAccountRequest, CreateAccountResponse>;
 
   public readonly createSession: Operation<CreateSessionRequest, CreateSessionResponse>;
+
+  public readonly createTranscript: Operation<CreateTranscriptRequest, CreateTranscriptResponse>;
+
+  public readonly deleteTranscript: Operation<DeleteTranscriptRequest, DeleteTranscriptResponse>;
+
+  public readonly listTranscripts: Operation<ListTranscriptsRequest, ListTranscriptsResponse>;
+
+  public readonly updateTranscript: Operation<UpdateTranscriptRequest, UpdateTranscriptResponse>;
 
   public constructor(endpoint: string) {
     this.createAccount = new Operation(
@@ -32,6 +68,30 @@ export class Client {
       CreateSessionResource,
       CreateSessionRequestSchema,
       CreateSessionResponseSchema
+    );
+    this.createTranscript = new Operation(
+      endpoint, 
+      CreateTranscriptResource, 
+      CreateTranscriptRequestSchema, 
+      CreateTranscriptResponseSchema
+    );
+    this.deleteTranscript = new Operation(
+      endpoint, 
+      DeleteTranscriptResource, 
+      DeleteTranscriptRequestSchema, 
+      DeleteTranscriptResponseSchema
+    );
+    this.listTranscripts = new Operation(
+      endpoint, 
+      ListTranscriptsResource, 
+      ListTranscriptsRequestSchema, 
+      ListTranscriptsResponseSchema
+    );
+    this.updateTranscript = new Operation(
+      endpoint, 
+      UpdateTranscriptResource, 
+      UpdateTranscriptRequestSchema, 
+      UpdateTranscriptResponseSchema
     );
   }
 

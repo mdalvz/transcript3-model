@@ -3,6 +3,7 @@ import { z } from 'zod';
 export const TranscriptSchema = z.object({
   transcriptId: z.string(),
   accountEmail: z.string(),
+  isK12: z.number(),
   schoolName: z.string(),
   schoolAddress: z.string(),
   adminTitle: z.string(),

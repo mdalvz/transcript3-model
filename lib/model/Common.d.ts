@@ -2,6 +2,7 @@ import { z } from 'zod';
 export declare const TranscriptSchema: z.ZodObject<{
     transcriptId: z.ZodString;
     accountEmail: z.ZodString;
+    isK12: z.ZodNumber;
     schoolName: z.ZodString;
     schoolAddress: z.ZodString;
     adminTitle: z.ZodString;
@@ -24,6 +25,7 @@ export declare const TranscriptSchema: z.ZodObject<{
 }, "strip", z.ZodTypeAny, {
     transcriptId: string;
     accountEmail: string;
+    isK12: number;
     schoolName: string;
     schoolAddress: string;
     adminTitle: string;
@@ -46,6 +48,7 @@ export declare const TranscriptSchema: z.ZodObject<{
 }, {
     transcriptId: string;
     accountEmail: string;
+    isK12: number;
     schoolName: string;
     schoolAddress: string;
     adminTitle: string;

@@ -13,6 +13,7 @@ export declare const GetTranscriptRequestSchema: z.ZodObject<{
 export declare const GetTranscriptResponseSchema: z.ZodObject<{
     transcriptId: z.ZodString;
     accountEmail: z.ZodString;
+    isK12: z.ZodNumber;
     schoolName: z.ZodString;
     schoolAddress: z.ZodString;
     adminTitle: z.ZodString;
@@ -35,6 +36,7 @@ export declare const GetTranscriptResponseSchema: z.ZodObject<{
 }, "strip", z.ZodTypeAny, {
     transcriptId: string;
     accountEmail: string;
+    isK12: number;
     schoolName: string;
     schoolAddress: string;
     adminTitle: string;
@@ -57,6 +59,7 @@ export declare const GetTranscriptResponseSchema: z.ZodObject<{
 }, {
     transcriptId: string;
     accountEmail: string;
+    isK12: number;
     schoolName: string;
     schoolAddress: string;
     adminTitle: string;

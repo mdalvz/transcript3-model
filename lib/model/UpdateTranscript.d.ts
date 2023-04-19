@@ -5,6 +5,7 @@ export declare const UpdateTranscriptRequestSchema: z.ZodObject<{
     transcript: z.ZodObject<{
         transcriptId: z.ZodString;
         accountEmail: z.ZodString;
+        isK12: z.ZodNumber;
         schoolName: z.ZodString;
         schoolAddress: z.ZodString;
         adminTitle: z.ZodString;
@@ -27,6 +28,7 @@ export declare const UpdateTranscriptRequestSchema: z.ZodObject<{
     }, "strip", z.ZodTypeAny, {
         transcriptId: string;
         accountEmail: string;
+        isK12: number;
         schoolName: string;
         schoolAddress: string;
         adminTitle: string;
@@ -49,6 +51,7 @@ export declare const UpdateTranscriptRequestSchema: z.ZodObject<{
     }, {
         transcriptId: string;
         accountEmail: string;
+        isK12: number;
         schoolName: string;
         schoolAddress: string;
         adminTitle: string;
@@ -74,6 +77,7 @@ export declare const UpdateTranscriptRequestSchema: z.ZodObject<{
     transcript: {
         transcriptId: string;
         accountEmail: string;
+        isK12: number;
         schoolName: string;
         schoolAddress: string;
         adminTitle: string;
@@ -99,6 +103,7 @@ export declare const UpdateTranscriptRequestSchema: z.ZodObject<{
     transcript: {
         transcriptId: string;
         accountEmail: string;
+        isK12: number;
         schoolName: string;
         schoolAddress: string;
         adminTitle: string;
@@ -123,6 +128,7 @@ export declare const UpdateTranscriptRequestSchema: z.ZodObject<{
 export declare const UpdateTranscriptResponseSchema: z.ZodObject<{
     transcriptId: z.ZodString;
     accountEmail: z.ZodString;
+    isK12: z.ZodNumber;
     schoolName: z.ZodString;
     schoolAddress: z.ZodString;
     adminTitle: z.ZodString;
@@ -145,6 +151,7 @@ export declare const UpdateTranscriptResponseSchema: z.ZodObject<{
 }, "strip", z.ZodTypeAny, {
     transcriptId: string;
     accountEmail: string;
+    isK12: number;
     schoolName: string;
     schoolAddress: string;
     adminTitle: string;
@@ -167,6 +174,7 @@ export declare const UpdateTranscriptResponseSchema: z.ZodObject<{
 }, {
     transcriptId: string;
     accountEmail: string;
+    isK12: number;
     schoolName: string;
     schoolAddress: string;
     adminTitle: string;

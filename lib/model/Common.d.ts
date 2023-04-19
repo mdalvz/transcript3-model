@@ -13,6 +13,7 @@ export declare const TranscriptSchema: z.ZodObject<{
     studentNameLast: z.ZodString;
     studentNameSuffix: z.ZodString;
     studentBirthDate: z.ZodString;
+    studentGraduationDate: z.ZodString;
     studentAddress: z.ZodString;
     studentPhone: z.ZodString;
     studentEmail: z.ZodString;
@@ -34,6 +35,7 @@ export declare const TranscriptSchema: z.ZodObject<{
     studentNameLast: string;
     studentNameSuffix: string;
     studentBirthDate: string;
+    studentGraduationDate: string;
     studentAddress: string;
     studentPhone: string;
     studentEmail: string;
@@ -55,6 +57,7 @@ export declare const TranscriptSchema: z.ZodObject<{
     studentNameLast: string;
     studentNameSuffix: string;
     studentBirthDate: string;
+    studentGraduationDate: string;
     studentAddress: string;
     studentPhone: string;
     studentEmail: string;
@@ -70,6 +73,7 @@ export declare const ClassSchema: z.ZodObject<{
     subject: z.ZodString;
     name: z.ZodString;
     level: z.ZodNumber;
+    term: z.ZodString;
     year: z.ZodString;
     provider: z.ZodString;
     type: z.ZodString;
@@ -84,6 +88,7 @@ export declare const ClassSchema: z.ZodObject<{
     classId: string;
     subject: string;
     level: number;
+    term: string;
     provider: string;
     grade: string;
     awarded: number;
@@ -96,6 +101,7 @@ export declare const ClassSchema: z.ZodObject<{
     classId: string;
     subject: string;
     level: number;
+    term: string;
     provider: string;
     grade: string;
     awarded: number;

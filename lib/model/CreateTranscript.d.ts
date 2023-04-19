@@ -21,6 +21,7 @@ export declare const CreateTranscriptResponseSchema: z.ZodObject<{
     studentNameLast: z.ZodString;
     studentNameSuffix: z.ZodString;
     studentBirthDate: z.ZodString;
+    studentGraduationDate: z.ZodString;
     studentAddress: z.ZodString;
     studentPhone: z.ZodString;
     studentEmail: z.ZodString;
@@ -42,6 +43,7 @@ export declare const CreateTranscriptResponseSchema: z.ZodObject<{
     studentNameLast: string;
     studentNameSuffix: string;
     studentBirthDate: string;
+    studentGraduationDate: string;
     studentAddress: string;
     studentPhone: string;
     studentEmail: string;
@@ -63,6 +65,7 @@ export declare const CreateTranscriptResponseSchema: z.ZodObject<{
     studentNameLast: string;
     studentNameSuffix: string;
     studentBirthDate: string;
+    studentGraduationDate: string;
     studentAddress: string;
     studentPhone: string;
     studentEmail: string;

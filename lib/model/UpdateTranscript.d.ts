@@ -16,6 +16,7 @@ export declare const UpdateTranscriptRequestSchema: z.ZodObject<{
         studentNameLast: z.ZodString;
         studentNameSuffix: z.ZodString;
         studentBirthDate: z.ZodString;
+        studentGraduationDate: z.ZodString;
         studentAddress: z.ZodString;
         studentPhone: z.ZodString;
         studentEmail: z.ZodString;
@@ -37,6 +38,7 @@ export declare const UpdateTranscriptRequestSchema: z.ZodObject<{
         studentNameLast: string;
         studentNameSuffix: string;
         studentBirthDate: string;
+        studentGraduationDate: string;
         studentAddress: string;
         studentPhone: string;
         studentEmail: string;
@@ -58,6 +60,7 @@ export declare const UpdateTranscriptRequestSchema: z.ZodObject<{
         studentNameLast: string;
         studentNameSuffix: string;
         studentBirthDate: string;
+        studentGraduationDate: string;
         studentAddress: string;
         studentPhone: string;
         studentEmail: string;
@@ -82,6 +85,7 @@ export declare const UpdateTranscriptRequestSchema: z.ZodObject<{
         studentNameLast: string;
         studentNameSuffix: string;
         studentBirthDate: string;
+        studentGraduationDate: string;
         studentAddress: string;
         studentPhone: string;
         studentEmail: string;
@@ -106,6 +110,7 @@ export declare const UpdateTranscriptRequestSchema: z.ZodObject<{
         studentNameLast: string;
         studentNameSuffix: string;
         studentBirthDate: string;
+        studentGraduationDate: string;
         studentAddress: string;
         studentPhone: string;
         studentEmail: string;
@@ -129,6 +134,7 @@ export declare const UpdateTranscriptResponseSchema: z.ZodObject<{
     studentNameLast: z.ZodString;
     studentNameSuffix: z.ZodString;
     studentBirthDate: z.ZodString;
+    studentGraduationDate: z.ZodString;
     studentAddress: z.ZodString;
     studentPhone: z.ZodString;
     studentEmail: z.ZodString;
@@ -150,6 +156,7 @@ export declare const UpdateTranscriptResponseSchema: z.ZodObject<{
     studentNameLast: string;
     studentNameSuffix: string;
     studentBirthDate: string;
+    studentGraduationDate: string;
     studentAddress: string;
     studentPhone: string;
     studentEmail: string;
@@ -171,6 +178,7 @@ export declare const UpdateTranscriptResponseSchema: z.ZodObject<{
     studentNameLast: string;
     studentNameSuffix: string;
     studentBirthDate: string;
+    studentGraduationDate: string;
     studentAddress: string;
     studentPhone: string;
     studentEmail: string;

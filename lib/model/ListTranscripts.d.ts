@@ -1,11 +1,11 @@
 import { z } from 'zod';
 export declare const ListTranscriptsResource = "/list-transcripts";
 export declare const ListTranscriptsRequestSchema: z.ZodObject<{
-    sessionId: z.ZodString;
+    sessionToken: z.ZodString;
 }, "strip", z.ZodTypeAny, {
-    sessionId: string;
+    sessionToken: string;
 }, {
-    sessionId: string;
+    sessionToken: string;
 }>;
 export declare const ListTranscriptsResponseSchema: z.ZodArray<z.ZodObject<{
     transcriptId: z.ZodString;

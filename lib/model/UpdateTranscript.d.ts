@@ -1,7 +1,7 @@
 import { z } from 'zod';
 export declare const UpdateTranscriptResource = "/update-transcript";
 export declare const UpdateTranscriptRequestSchema: z.ZodObject<{
-    sessionId: z.ZodString;
+    sessionToken: z.ZodString;
     transcript: z.ZodObject<{
         transcriptId: z.ZodString;
         accountEmail: z.ZodString;
@@ -67,7 +67,7 @@ export declare const UpdateTranscriptRequestSchema: z.ZodObject<{
         computeWeightedGPA: boolean;
     }>;
 }, "strip", z.ZodTypeAny, {
-    sessionId: string;
+    sessionToken: string;
     transcript: {
         transcriptId: string;
         accountEmail: string;
@@ -91,7 +91,7 @@ export declare const UpdateTranscriptRequestSchema: z.ZodObject<{
         computeWeightedGPA: boolean;
     };
 }, {
-    sessionId: string;
+    sessionToken: string;
     transcript: {
         transcriptId: string;
         accountEmail: string;

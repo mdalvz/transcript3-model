@@ -4,7 +4,7 @@ import { TranscriptSchema } from './Common';
 export const UpdateTranscriptResource = '/update-transcript';
 
 export const UpdateTranscriptRequestSchema = z.object({
-  sessionId: z.string(),
+  sessionToken: z.string(),
   transcript: TranscriptSchema,
 });
 

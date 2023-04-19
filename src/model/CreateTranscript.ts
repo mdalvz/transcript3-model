@@ -4,7 +4,7 @@ import { TranscriptSchema } from './Common';
 export const CreateTranscriptResource = '/create-transcript';
 
 export const CreateTranscriptRequestSchema = z.object({
-  sessionId: z.string(),
+  sessionToken: z.string(),
 });
 
 export const CreateTranscriptResponseSchema = TranscriptSchema;

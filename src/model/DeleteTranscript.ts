@@ -3,7 +3,7 @@ import { z } from 'zod';
 export const DeleteTranscriptResource = '/delete-transcript';
 
 export const DeleteTranscriptRequestSchema = z.object({
-  sessionId: z.string(),
+  sessionToken: z.string(),
   transcriptId: z.string(),
 });
 

@@ -1,11 +1,11 @@
 import { z } from 'zod';
 export declare const CreateTranscriptResource = "/create-transcript";
 export declare const CreateTranscriptRequestSchema: z.ZodObject<{
-    sessionId: z.ZodString;
+    sessionToken: z.ZodString;
 }, "strip", z.ZodTypeAny, {
-    sessionId: string;
+    sessionToken: string;
 }, {
-    sessionId: string;
+    sessionToken: string;
 }>;
 export declare const CreateTranscriptResponseSchema: z.ZodObject<{
     transcriptId: z.ZodString;

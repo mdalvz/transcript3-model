@@ -26,8 +26,8 @@ export declare const CreateTranscriptResponseSchema: z.ZodObject<{
     studentEmail: z.ZodString;
     transcriptTitle: z.ZodString;
     transcriptLogo: z.ZodString;
-    arrangeByGrade: z.ZodBoolean;
-    computeWeightedGPA: z.ZodBoolean;
+    arrangeByGrade: z.ZodNumber;
+    computeWeightedGPA: z.ZodNumber;
 }, "strip", z.ZodTypeAny, {
     transcriptId: string;
     accountEmail: string;
@@ -47,8 +47,8 @@ export declare const CreateTranscriptResponseSchema: z.ZodObject<{
     studentEmail: string;
     transcriptTitle: string;
     transcriptLogo: string;
-    arrangeByGrade: boolean;
-    computeWeightedGPA: boolean;
+    arrangeByGrade: number;
+    computeWeightedGPA: number;
 }, {
     transcriptId: string;
     accountEmail: string;
@@ -68,8 +68,8 @@ export declare const CreateTranscriptResponseSchema: z.ZodObject<{
     studentEmail: string;
     transcriptTitle: string;
     transcriptLogo: string;
-    arrangeByGrade: boolean;
-    computeWeightedGPA: boolean;
+    arrangeByGrade: number;
+    computeWeightedGPA: number;
 }>;
 export type CreateTranscriptRequest = z.infer<typeof CreateTranscriptRequestSchema>;
 export type CreateTranscriptResponse = z.infer<typeof CreateTranscriptResponseSchema>;

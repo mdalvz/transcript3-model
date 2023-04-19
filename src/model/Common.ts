@@ -19,8 +19,8 @@ export const TranscriptSchema = z.object({
   studentEmail: z.string(),
   transcriptTitle: z.string(),
   transcriptLogo: z.string(),
-  arrangeByGrade: z.boolean(),
-  computeWeightedGPA: z.boolean(),
+  arrangeByGrade: z.number(),
+  computeWeightedGPA: z.number(),
 });
 
 export type Transcript = z.infer<typeof TranscriptSchema>;

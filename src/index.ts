@@ -7,3 +7,4 @@ export * from './model/ListTranscripts';
 export * from './model/UpdateTranscript';
 export * from './client/Operation';
 export * from './client/Client';
+export * from './client/Error';

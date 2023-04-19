@@ -1,4 +1,5 @@
 import { z } from 'zod';
+import { ResponseError, ValidationError } from './Error';
 
 export class Operation<TRequest, TResponse> {
 
@@ -24,7 +25,7 @@ export class Operation<TRequest, TResponse> {
 
   public async invoke(requestBody: TRequest): Promise<TResponse> {
     if (!this.requestSchema.safeParse(requestBody).success) {
-      throw new Error('Invalid request body');
+      throw new ValidationError('Invalid request body');
     }
     let response = await fetch(this.endpoint + this.resource, {
       method: 'POST',
@@ -38,10 +39,10 @@ export class Operation<TRequest, TResponse> {
         let responseBody = this.responseSchema.parse(await response.json());
         return responseBody;
       } catch (_) {
-        throw new Error('Invalid response body');
+        throw new ValidationError('Invalid response body');
       }
     } else {
-      throw new Error(await response.text());
+      throw new ResponseError(response.status, await response.text());
     }
   }
 

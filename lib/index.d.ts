@@ -5,6 +5,7 @@ export * from './model/CreateTranscript';
 export * from './model/DeleteTranscript';
 export * from './model/ListTranscripts';
 export * from './model/UpdateTranscript';
+export * from './model/GetTranscript';
 export * from './client/Operation';
 export * from './client/Client';
 export * from './client/Error';

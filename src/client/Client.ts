@@ -40,6 +40,13 @@ import {
   UpdateTranscriptResponse, 
   UpdateTranscriptResponseSchema 
 } from '../model/UpdateTranscript';
+import { 
+  GetTranscriptRequest, 
+  GetTranscriptRequestSchema, 
+  GetTranscriptResource, 
+  GetTranscriptResponse, 
+  GetTranscriptResponseSchema 
+} from '../model/GetTranscript';
 import { Operation } from './Operation';
 
 export class Client {
@@ -55,6 +62,8 @@ export class Client {
   public readonly listTranscripts: Operation<ListTranscriptsRequest, ListTranscriptsResponse>;
 
   public readonly updateTranscript: Operation<UpdateTranscriptRequest, UpdateTranscriptResponse>;
+
+  public readonly getTranscript: Operation<GetTranscriptRequest, GetTranscriptResponse>;
 
   public constructor(endpoint: string) {
     this.createAccount = new Operation(
@@ -92,6 +101,12 @@ export class Client {
       UpdateTranscriptResource, 
       UpdateTranscriptRequestSchema, 
       UpdateTranscriptResponseSchema
+    );
+    this.getTranscript = new Operation(
+      endpoint,
+      GetTranscriptResource,
+      GetTranscriptRequestSchema,
+      GetTranscriptResponseSchema
     );
   }
 

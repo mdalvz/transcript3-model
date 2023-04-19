@@ -47,6 +47,34 @@ import {
   GetTranscriptResponse, 
   GetTranscriptResponseSchema 
 } from '../model/GetTranscript';
+import { 
+  CreateClassRequest, 
+  CreateClassRequestSchema, 
+  CreateClassResource, 
+  CreateClassResponse, 
+  CreateClassResponseSchema 
+} from '../model/CreateClass';
+import { 
+  DeleteClassRequest, 
+  DeleteClassRequestSchema, 
+  DeleteClassResource, 
+  DeleteClassResponse, 
+  DeleteClassResponseSchema 
+} from '../model/DeleteClass';
+import { 
+  UpdateClassRequest, 
+  UpdateClassRequestSchema, 
+  UpdateClassResource, 
+  UpdateClassResponse, 
+  UpdateClassResponseSchema 
+} from '../model/UpdateClass';
+import { 
+  ListClassesRequest, 
+  ListClassesRequestSchema, 
+  ListClassesResource, 
+  ListClassesResponse, 
+  ListClassesResponseSchema 
+} from '../model/ListClasses';
 import { Operation } from './Operation';
 
 export class Client {
@@ -64,6 +92,14 @@ export class Client {
   public readonly updateTranscript: Operation<UpdateTranscriptRequest, UpdateTranscriptResponse>;
 
   public readonly getTranscript: Operation<GetTranscriptRequest, GetTranscriptResponse>;
+
+  public readonly createClass: Operation<CreateClassRequest, CreateClassResponse>;
+
+  public readonly deleteClass: Operation<DeleteClassRequest, DeleteClassResponse>;
+
+  public readonly listClasses: Operation<ListClassesRequest, ListClassesResponse>;
+
+  public readonly updateClass: Operation<UpdateClassRequest, UpdateClassResponse>;
 
   public constructor(endpoint: string) {
     this.createAccount = new Operation(
@@ -107,6 +143,30 @@ export class Client {
       GetTranscriptResource,
       GetTranscriptRequestSchema,
       GetTranscriptResponseSchema
+    );
+    this.createClass = new Operation(
+      endpoint,
+      CreateClassResource,
+      CreateClassRequestSchema,
+      CreateClassResponseSchema
+    );
+    this.deleteClass = new Operation(
+      endpoint,
+      DeleteClassResource,
+      DeleteClassRequestSchema,
+      DeleteClassResponseSchema
+    );
+    this.updateClass = new Operation(
+      endpoint,
+      UpdateClassResource,
+      UpdateClassRequestSchema,
+      UpdateClassResponseSchema
+    );
+    this.listClasses = new Operation(
+      endpoint,
+      ListClassesResource,
+      ListClassesRequestSchema,
+      ListClassesResponseSchema
     );
   }
 

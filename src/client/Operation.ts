@@ -36,7 +36,9 @@ export class Operation<TRequest, TResponse> {
     });
     if (response.ok) {
       try {
-        let responseBody = this.responseSchema.parse(await response.json());
+        let x = await response.json();
+        console.log(JSON.stringify(x, null, 2));
+        let responseBody = this.responseSchema.parse(x);
         return responseBody;
       } catch (_) {
         throw new ValidationError('Invalid response body');

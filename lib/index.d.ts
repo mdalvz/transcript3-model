@@ -10,6 +10,8 @@ export * from './model/CreateClass';
 export * from './model/DeleteClass';
 export * from './model/ListClasses';
 export * from './model/UpdateClass';
+export * from './model/GenerateTranscript';
+export * from './model/GetAccount';
 export * from './client/Operation';
 export * from './client/Client';
 export * from './client/Error';

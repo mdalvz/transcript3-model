@@ -75,6 +75,20 @@ import {
   ListClassesResponse, 
   ListClassesResponseSchema 
 } from '../model/ListClasses';
+import { 
+  GenerateTranscriptRequest, 
+  GenerateTranscriptRequestSchema, 
+  GenerateTranscriptResource, 
+  GenerateTranscriptResponse, 
+  GenerateTranscriptResponseSchema 
+} from '../model/GenerateTranscript';
+import { 
+  GetAccountRequest, 
+  GetAccountRequestSchema, 
+  GetAccountResource, 
+  GetAccountResponse, 
+  GetAccountResponseSchema 
+} from '../model/GetAccount';
 import { Operation } from './Operation';
 
 export class Client {
@@ -100,6 +114,10 @@ export class Client {
   public readonly listClasses: Operation<ListClassesRequest, ListClassesResponse>;
 
   public readonly updateClass: Operation<UpdateClassRequest, UpdateClassResponse>;
+
+  public readonly generateTranscript: Operation<GenerateTranscriptRequest, GenerateTranscriptResponse>;
+
+  public readonly getAccount: Operation<GetAccountRequest, GetAccountResponse>;
 
   public constructor(endpoint: string) {
     this.createAccount = new Operation(
@@ -167,6 +185,18 @@ export class Client {
       ListClassesResource,
       ListClassesRequestSchema,
       ListClassesResponseSchema
+    );
+    this.generateTranscript = new Operation(
+      endpoint,
+      GenerateTranscriptResource,
+      GenerateTranscriptRequestSchema,
+      GenerateTranscriptResponseSchema,
+    );
+    this.getAccount = new Operation(
+      endpoint,
+      GetAccountResource,
+      GetAccountRequestSchema,
+      GetAccountResponseSchema,
     );
   }
 

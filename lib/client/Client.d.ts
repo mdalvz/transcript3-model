@@ -9,6 +9,8 @@ import { CreateClassRequest, CreateClassResponse } from '../model/CreateClass';
 import { DeleteClassRequest, DeleteClassResponse } from '../model/DeleteClass';
 import { UpdateClassRequest, UpdateClassResponse } from '../model/UpdateClass';
 import { ListClassesRequest, ListClassesResponse } from '../model/ListClasses';
+import { GenerateTranscriptRequest, GenerateTranscriptResponse } from '../model/GenerateTranscript';
+import { GetAccountRequest, GetAccountResponse } from '../model/GetAccount';
 import { Operation } from './Operation';
 export declare class Client {
     readonly createAccount: Operation<CreateAccountRequest, CreateAccountResponse>;
@@ -22,5 +24,7 @@ export declare class Client {
     readonly deleteClass: Operation<DeleteClassRequest, DeleteClassResponse>;
     readonly listClasses: Operation<ListClassesRequest, ListClassesResponse>;
     readonly updateClass: Operation<UpdateClassRequest, UpdateClassResponse>;
+    readonly generateTranscript: Operation<GenerateTranscriptRequest, GenerateTranscriptResponse>;
+    readonly getAccount: Operation<GetAccountRequest, GetAccountResponse>;
     constructor(endpoint: string);
 }

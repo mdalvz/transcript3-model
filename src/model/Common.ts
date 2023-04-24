@@ -36,7 +36,7 @@ export const ClassSchema = z.object({
   term: z.string(),
   year: z.string(),
   provider: z.string(),
-  type: z.string(),
+  type: z.array(z.string()),
   grade: z.string(),
   awarded: z.number(),
   attempted: z.number(),

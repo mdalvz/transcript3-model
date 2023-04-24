@@ -79,12 +79,12 @@ export declare const ClassSchema: z.ZodObject<{
     term: z.ZodString;
     year: z.ZodString;
     provider: z.ZodString;
-    type: z.ZodString;
+    type: z.ZodArray<z.ZodString, "many">;
     grade: z.ZodString;
     awarded: z.ZodNumber;
     attempted: z.ZodNumber;
 }, "strip", z.ZodTypeAny, {
-    type: string;
+    type: string[];
     name: string;
     year: string;
     transcriptId: string;
@@ -97,7 +97,7 @@ export declare const ClassSchema: z.ZodObject<{
     awarded: number;
     attempted: number;
 }, {
-    type: string;
+    type: string[];
     name: string;
     year: string;
     transcriptId: string;
